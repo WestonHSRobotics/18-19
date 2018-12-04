@@ -36,11 +36,11 @@ public void runOpMode() {
 		//Left Joystick for front/back and left/right
 		//Right Joystick for turning left/right without moving forward
 		
-		
-		powerFL = Range.clip(this.gamepad1.left_stick_y + this.gamepad1.left_stick_x + this.gamepad1.right_stick_x, -1, 1);
-		powerFR = Range.clip((this.gamepad1.left_stick_y - this.gamepad1.left_stick_x - this.gamepad1.right_stick_x) * -1, -1, 1);
-		powerBL = Range.clip((this.gamepad1.left_stick_y + this.gamepad1.left_stick_x - this.gamepad1.right_stick_x), -1, 1);
-		powerBR = Range.clip((this.gamepad1.left_stick_y - this.gamepad1.left_stick_x + this.gamepad1.right_stick_x) * -1, -1, 1);
+		// div by two temp
+		powerFL = Range.clip(this.gamepad1.left_stick_y - this.gamepad1.left_stick_x + this.gamepad1.right_stick_x, -1, 1) / 2;
+		powerFR = Range.clip((this.gamepad1.left_stick_y + this.gamepad1.left_stick_x - this.gamepad1.right_stick_x) * -1, -1, 1) / 2;
+		powerBL = Range.clip(this.gamepad1.left_stick_y + this.gamepad1.left_stick_x - this.gamepad1.right_stick_x, -1, 1) / 2;
+		powerBR = Range.clip((this.gamepad1.left_stick_y - this.gamepad1.left_stick_x + this.gamepad1.right_stick_x) * -1, -1, 1) / 2;
 		
 
 		//Sets calculated power for each motor
